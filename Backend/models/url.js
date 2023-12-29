@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Url.init({
-    originalUrl: DataTypes.STRING,
-    shortUrl: DataTypes.STRING
+    originalUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    shortUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   }, {
     sequelize,
     modelName: 'Url',

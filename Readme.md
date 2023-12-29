@@ -30,11 +30,11 @@ SnapShort is a URL shortening service that allows users to create short and shar
 # Implementatiom
 
 
-- [ ] **Database Creation:**
+- [x] **Database Creation:**
   - Set up a MySQL database to store user information, short URLs, and related data.
 
-- [ ] **Model Definition:**
-  - Define Sequelize models for entities like `User` and `ShortUrl`.
+- [x] **Model Definition:**
+  - Define Sequelize models for entities like `User` and `Url`.
 
 - [ ] **User Authentication:**
   - Implement user authentication using Passport.js or similar library.

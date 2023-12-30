@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const {PORT} = require('./config/config.json');
+const {PORT} = require('./config/serverconfig');
 const Apiroutes = require('./routes/index');
 const db = require('./models/index')
 const setupAndstartserver = async () =>
@@ -10,7 +10,7 @@ const setupAndstartserver = async () =>
     app.use(bodyParser.urlencoded({extended: true}))
     app.use('/api',Apiroutes);
 
-    app.listen(3000, async () =>
+    app.listen(PORT, async () =>
     {
         console.log(`server started at ${PORT}`);
         if(process.env.SYNC){

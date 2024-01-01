@@ -13,18 +13,50 @@ SnapShort is a URL shortening service that allows users to create short and shar
 - Expiration handling.
 - Rate limiting and security measures.
 
-## Getting Started
+## Tech Stack
 
-### Prerequisites
+This project utilizes the following technologies and libraries:
 
-- Node.js
-- MySQL
-- Sequelize
+- **Node.js:** A JavaScript runtime built on the V8 JavaScript engine for building server-side applications.
+
+- **Express:** A fast, unopinionated, minimalist web framework for Node.js.
+
+- **MySQL2:** A Node.js-based MySQL library for interacting with the MySQL database.
+
+- **Sequelize:** A promise-based ORM (Object-Relational Mapping) for Node.js that supports multiple database dialects, including MySQL.
+
+- **Passport:** Authentication middleware for Node.js. In this project, it is used for user authentication.
+
+- **Passport-JWT:** Passport strategy for authenticating with JSON Web Tokens (JWT).
+
+- **JSON Web Token (jsonwebtoken):** A library for generating and verifying JSON web tokens. Used for secure communication between the client and server.
+
+- **Axios:** A promise-based HTTP client for making HTTP requests. It's used for making HTTP requests to external services or APIs.
+
+- **bcrypt:** A library for hashing passwords. Used for securely storing user passwords.
+
+- **Body Parser:** Middleware for parsing incoming request bodies. Used for parsing JSON and URL-encoded request bodies.
+
+- **Crypto:** A library for cryptographic operations. It can be used for generating random strings or hashes.
+
+- **Dotenv:** A zero-dependency module for loading environment variables from a .env file into process.env.
+
+- **Morgan:** HTTP request logger middleware for Node.js. Used for logging HTTP requests.
+
+- **Nodemon:** A utility that monitors for changes in files and automatically restarts the server. It is used for development to enhance the development workflow.
+
+- **dotenv:** A zero-dependency module for loading environment variables from a .env file into process.env.
+
 
 ### Installation
 
-1. Clone the repository:
-   git clone  https://github.com/jsndz/Snapshort.git
+1. Clone the repository.
+    git clone  https://github.com/jsndz/Snapshort.git
+2. Install dependencies using `npm install`.
+3. Set up your database and configure the connection in the `.env` file.
+4. Run the application using `npm start` or `nodemon` for development.
+5. Access the application in your browser at the specified port.
+   
 
 
 # Implementatiom
@@ -36,17 +68,17 @@ SnapShort is a URL shortening service that allows users to create short and shar
 - [x] **Model Definition:**
   - Define Sequelize models for entities like `User` and `Url`.
 
-- [ ] **User Authentication:**
+- [x] **User Authentication:**
   - Implement user authentication using Passport.js or similar library.
 
-- [ ] **URL Shortening Logic:**
+- [x] **URL Shortening Logic:**
   - Create a function to generate short URLs from long URLs.
   - Ensure short URLs are unique and securely generated.
 
-- [ ] **API Endpoints:**
+- [x] **API Endpoints:**
   - Implement basic API endpoints for creating short URLs, retrieving original URLs, and handling redirects.
 
-- [ ] **Logging:**
+- [x] **Logging:**
   - Set up logging to keep track of URL shortening activities for debugging and analytics.
 
 - [ ] **User Dashboard:**

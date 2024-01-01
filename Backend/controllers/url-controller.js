@@ -23,6 +23,27 @@ const Addurl = async (req, res) => {
     }
 };  
 
+const Removeurl = async (req, res) => {
+    try {
+        const url = await urlService.removeUrl(req.params.id);
+        return res.status(201).json({
+            data: url,
+            sucess: true,
+            message: 'successfully removed a url',
+            err:{}
+        })
+    } catch (error) {
+        console.log(error); 
+       return res.status(500).json({
+            data: {},
+            sucess: false,
+            message: 'couldnt delete a url',
+            err:{error}
+       })
+    }
+}; 
+
 module.exports ={
-    Addurl
+    Addurl,
+    Removeurl
 }

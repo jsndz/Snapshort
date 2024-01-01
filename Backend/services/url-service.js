@@ -13,7 +13,17 @@ class UrlService {
         originalUrl: data.originalUrl,
         shortUrl: tinyurl,
       };
-      const url = await this.urlRepository.urlcreate(input);
+      const url = await this.urlRepository.createurl(input);
+      return url;
+    } catch (error) {
+      console.log("Something went wrong in the service layer");
+      throw { error };
+    }
+  }
+
+  async removeUrl(id){
+    try {
+      const url = await this.urlRepository.removeurl(id);
       return url;
     } catch (error) {
       console.log("Something went wrong in the service layer");

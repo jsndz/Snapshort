@@ -30,6 +30,15 @@ class UrlService {
       throw { error };
     }
   }
+  async getUrls(id){
+    try {
+      const urls = await this.urlRepository.getAllUrl(id);
+      return urls;
+    } catch (error) {
+      console.log("Something went wrong in the service layer");
+      throw { error };
+    }
+  }
 }
 
 module.exports = UrlService;

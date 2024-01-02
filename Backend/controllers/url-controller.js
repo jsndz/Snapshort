@@ -43,7 +43,28 @@ const Removeurl = async (req, res) => {
     }
 }; 
 
+
+async function getUrlsOfUser(req, res){
+    try {
+        const urls = await urlService.getUrls(req.params.id);
+        return res.status(200).json({
+        data: urls,
+        sucess: true,
+        message: 'successfully fetched urls',
+        err:{}
+    })
+    } catch (error) {
+        console.log(error); 
+         return res.status(500).json({
+                data: {},
+                sucess: false,
+                message: 'couldnt fetch urls',
+                err:{error}
+         })
+    }
+    }
 module.exports ={
     Addurl,
-    Removeurl
+    Removeurl,
+    getUrlsOfUser
 }

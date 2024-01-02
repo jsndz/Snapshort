@@ -28,6 +28,19 @@ class UrlRepository extends CrudRepository{
       throw {error};
   }
   }
+  async getAllUrl(Id){
+    try {
+        const result = await Url.findAll({
+          where:{
+            userId:Id
+          }
+        });
+        return result;
+    } catch (error) {
+        console.log("Something went wrong in the crud layer");
+        throw {error};
+    }
+}
 }
 
 module.exports = UrlRepository;
